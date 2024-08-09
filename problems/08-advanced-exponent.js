@@ -39,11 +39,73 @@ be recursively calling `advancedExponent`. Find a way to visually see how many
 times `advancedExponent` is being recursively called.
 ***********************************************************************/
 
-
 function advancedExponent(b, n) {
-  // your code here
+  if (n === 0) {
+    return 1;
+  }
+
+  if (n === 1) {
+    return b;
+  }
+
+  // If n is an even number:
+  if (n % 2 === 0) {
+    if (n === 1) {
+      return b;
+    }
+
+    return (advancedExponent(b, n / 2) ** 2);
+  }
+
+  // If n is an odd number:
+  if (n === 1) {
+    return b;
+  }
+
+  return b * (advancedExponent(b, (n - 1) / 2) ** 2);
 }
 
+
+
+
+advancedExponent(2, 0); // 1
+console.log(advancedExponent(2, 0));
+
+advancedExponent(2, 1); // 2
+console.log(advancedExponent(2, 1));
+
+advancedExponent(2, 2); // 4
+console.log(advancedExponent(2, 2));
+
+advancedExponent(2, 3); // 8
+console.log(advancedExponent(2, 3));
+
+advancedExponent(2, 4); // 16
+console.log(advancedExponent(2, 4));
+
+advancedExponent(2, 5); // 32
+console.log(advancedExponent(2, 5));
+
+advancedExponent(2, 6); // 64
+console.log(advancedExponent(2, 6));
+
+advancedExponent(2, 7); // 128
+console.log(advancedExponent(2, 7));
+
+advancedExponent(2, 8); // 256
+console.log(advancedExponent(2, 8));
+
+advancedExponent(2, 9); // 512
+console.log(advancedExponent(2, 9));
+
+advancedExponent(2, 10); // 1024
+console.log(advancedExponent(2, 10));
+
+advancedExponent(2, 11); // 2048
+console.log(advancedExponent(2, 11));
+
+advancedExponent(2, 12); // 4096
+console.log(advancedExponent(2, 12));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

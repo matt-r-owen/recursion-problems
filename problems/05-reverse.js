@@ -12,7 +12,34 @@ reverse("id"); // "di"
 reverse(""); // ""
 ***********************************************************************/
 
-// your code here
+function reverse(string) {
+  if (string.length <= 0) {
+    return '';
+  }
+
+  return string.slice(-1) + reverse(string.slice(0, string.length - 1));
+}
+
+
+
+
+reverse("house"); // "esuoh"
+console.log(reverse("house"));
+
+reverse("dog"); // "god"
+console.log(reverse("dog"));
+
+reverse("atom"); // "mota"
+console.log(reverse("atom"));
+
+reverse("q"); // "q"
+console.log(reverse("q"));
+
+reverse("id"); // "di"
+console.log(reverse("id"));
+
+reverse(""); // ""
+console.log(reverse(""));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

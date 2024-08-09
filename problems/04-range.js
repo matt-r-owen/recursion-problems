@@ -11,8 +11,28 @@ range(7, 6); // []
 ***********************************************************************/
 
 
-// your code here
+function range(start, end) {
+  if (start >= end) {
+    return [];
+  }
 
+  const array = range(start + 1, end);
+  array.unshift(start);
+
+  return array;
+}
+
+
+
+
+//range(1, 5); // [1, 2, 3, 4]
+console.log(range(1, 5));
+
+//ange(3, 4); // [3]
+console.log(range(3, 4));
+
+//range(7, 6); // []
+console.log(range(7, 6));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

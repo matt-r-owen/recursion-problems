@@ -12,7 +12,9 @@ permutations([1, 2, 3]) // [[1, 2, 3], [1, 3, 2],
                         // [3, 1, 2], [3, 2, 1]]
 ***********************************************************************/
 
-// your code here
+function permutations(array) {
+  // your code here
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

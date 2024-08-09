@@ -22,8 +22,42 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-  // your code here
+  if (nums.length === 0) {
+    return sorted;
+  }
+
+  // This commented out code does the same thing as using the Math.min method below:
+  /*
+  let smallestNum = nums[0];
+
+  nums.forEach((number) => {
+    if (number < smallestNum) {
+      smallestNum = number;
+    }
+  });
+  */
+
+  let smallestNum = Math.min(...nums);
+
+  const smallestNumIndex = nums.indexOf(smallestNum);
+
+  nums.splice(smallestNumIndex, 1);
+  sorted.push(smallestNum);
+
+  return sort(nums, sorted);
 }
+
+
+
+
+sort([4,1,6,3,1,7]); // [1, 1, 3, 4, 6, 7]
+console.log(sort([4,1,6,3,1,7]));
+
+sort([0, 1, -3]); // [-3, 0, 1]
+console.log(sort([0, 1, -3]));
+
+sort([]); // []
+console.log(sort([]));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
